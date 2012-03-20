@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        Siddharth's blog excerpts feed    </title>
+        <link href="/blog/excerpts.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2012-03-20T21:50:26Z</updated>
+
+    <id>/blog/excerpts.xml/</id>
+
+            <entry>
+            <title type="html">The first post</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/first-post.html"/>
+            <updated>2012-03-20T21:25:00Z</updated>
+            <published>2012-03-20T21:25:00Z</published>
+            <id>/blog/first-post.html</id>
+                        <category   scheme="/blog/tags"
+                        term="musings"
+                        label="Musings" />
+            
+            <content type="html">
+                
+                &lt;p&gt;There have been previous attempts to keep a regular blog. Maybe this time will be&amp;nbsp;different.&lt;/p&gt;            </content>
+        </entry>
+    </feed>
