@@ -1,0 +1,40 @@
+---
+title: Clojure Cheat Sheet
+description: A personal lookup tanle for clojure.
+created: !!timestamp '2012-03-21 08:40:00'
+tags:
+    - clojure
+    - sicp
+---
+
+{% mark excerpt -%}
+
+There have been previous attempts to keep a regular blog. Maybe this time will be different.
+
+
+{%- endmark %}
+
+I have been putting off learning a functional language and reading SICP for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
+Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through SICP with clojure as there are some differences I still want to give it a shot.
+
+**Getting Documentation in clojure**: Export library using require and then do a call on doc with what you want to know as an argument
+                                        Example:
+                                          (require 'clojure.string)
+                                          (doc clojure.string/join)
+
+**Commenting in clojure**: Use ;
+
+** Different ways of Assigning values in Clojure **:
+def is global binding. Although possible to override, dont because it goes against the concept of mutable datastructures
+
+let is a special form creates bindings that are local to that form.(Does form mean a function?). The argument for let is a vector(list?) containing name expression pairs. The expressions are evaluated in order and their results are assigned to the names on their left. These bindings can be used in the expressions that follow them in the vector. Functions that are called in the body cannot see the local bindings created by let.
+
+binding macro is similar to let but it temporarily gives new thread local values to existing global bindings. The new values are seen in the form and also in functions that arecalled from outside it. Another difference is that let assigns values sequentially in the vector whereas binding sets it parallely. Binding can only change the value of dynamic vars.
+
+### Questions  ###
+[What is special form vs macro?](http://stackoverflow.com/questions/9396784/what-are-the-practical-differences-between-special-forms-and-macros)
+[What is defn?](http://clojuredocs.org/clojure_core/1.2.0/clojure.core/defn)
+[What is var?](http://clojure.org/vars)
+
+
+
