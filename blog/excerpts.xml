@@ -7,10 +7,29 @@
         <link href="/"/>
     
         
-    <updated>2012-03-20T21:56:03Z</updated>
+    <updated>2012-03-21T09:27:12Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Clojure Cheat Sheet</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/clojure-cheatsheet.html"/>
+            <updated>2012-03-21T08:40:00Z</updated>
+            <published>2012-03-21T08:40:00Z</published>
+            <id>/blog/clojure-cheatsheet.html</id>
+                        <category   scheme="/blog/tags"
+                        term="clojure"
+                        label="Clojure" />
+                        <category   scheme="/blog/tags"
+                        term="sicp"
+                        label="Sicp" />
+            
+            <content type="html">
+                
+                &lt;p&gt;I have been putting off learning a functional language and reading &lt;span class=&#34;caps&#34;&gt;SICP&lt;/span&gt; for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
+Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through &lt;span class=&#34;caps&#34;&gt;SICP&lt;/span&gt; with clojure as there are some differences I still want to give it a&amp;nbsp;shot.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">The first post</title>
             <author><name>Siddharth Sarda</name></author>

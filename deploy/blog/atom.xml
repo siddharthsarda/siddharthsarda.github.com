@@ -7,10 +7,27 @@
         <link href="/"/>
     
         
-    <updated>2012-03-20T21:56:03Z</updated>
+    <updated>2012-03-21T09:27:12Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Clojure Cheat Sheet</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/clojure-cheatsheet.html"/>
+            <updated>2012-03-21T08:40:00Z</updated>
+            <published>2012-03-21T08:40:00Z</published>
+            <id>/blog/clojure-cheatsheet.html</id>
+                        <category   scheme="/blog/tags"
+                        term="clojure"
+                        label="Clojure" />
+                        <category   scheme="/blog/tags"
+                        term="sicp"
+                        label="Sicp" />
+            
+            <content type="html">
+                                            </content>
+        </entry>
             <entry>
             <title type="html">The first post</title>
             <author><name>Siddharth Sarda</name></author>

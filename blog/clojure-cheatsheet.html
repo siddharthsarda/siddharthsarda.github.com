@@ -22,8 +22,8 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>The first post</title>
-  <meta name="description" content="None">
+  <title>Clojure Cheat Sheet</title>
+  <meta name="description" content="A personal lookup table for clojure.">
   <meta name="author" content="Siddharth Sarda">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -41,7 +41,7 @@
         enables HTML5 elements & feature detects -->
     <script src="/media/js/libs/modernizr-1.7.min.js"></script>
     </head>
-<body id="first-post">
+<body id="clojure-cheatsheet">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -73,15 +73,15 @@
           <article class="post">
 <nav class="post_nav">
 <a class="backlink" href="/blog">Back to list</a>
-<a class="prev"
-    title="Clojure Cheat Sheet"
-        href="/blog/clojure-cheatsheet.html">
+<a class="prev disabled"
+    title=""
+    >
     Previous
 </a>
 
-<a class="next disabled"
-    title=""
-    >
+<a class="next"
+    title="The first post"
+        href="/blog/first-post.html">
     Next
 </a>
 
@@ -103,23 +103,43 @@
 </div>
 </nav>
 <h1 class="title">
-    <a href="/blog/first-post.html">
-        The first post
+    <a href="/blog/clojure-cheatsheet.html">
+        Clojure Cheat Sheet
     </a>
 </h1>
-<time datetime="2012-03-20">
-    Posted: Tue, 20 Mar 2012
+<time datetime="2012-03-21">
+    Posted: Wed, 21 Mar 2012
 </time>
 
 <ul class="tags clear">
 <li>
-    <a class="small" href="/blog/tags/musings.html">
-        musings
+    <a class="small" href="/blog/tags/clojure.html">
+        clojure
+    </a>
+</li>
+<li>
+    <a class="small" href="/blog/tags/sicp.html">
+        sicp
     </a>
 </li>
 </ul>
-<p>There have been previous attempts to keep a regular blog. Maybe this time will be different.
-I have tried previously a lot of times to blog regularly, but havent really been successful. Hopefully this time will be&nbsp;different.</p></article>          </section>
+<p>I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
+Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a shot.
+I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
+Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a&nbsp;shot.</p>
+<p><strong>Getting Documentation in clojure</strong>: Export library using require and then do a call on doc with what you want to know as an argument
+                                        Example:
+                                          (require &#8216;clojure.string)
+                                          (doc&nbsp;clojure.string/join)</p>
+<p><strong>Commenting in clojure</strong>: Use&nbsp;;</p>
+<p><strong> Different ways of Assigning values in Clojure </strong>:
+def is global binding. Although possible to override, dont because it goes against the concept of mutable&nbsp;datastructures</p>
+<p>let is a special form creates bindings that are local to that form.(Does form mean a function?). The argument for let is a vector(list?) containing name expression pairs. The expressions are evaluated in order and their results are assigned to the names on their left. These bindings can be used in the expressions that follow them in the vector. Functions that are called in the body cannot see the local bindings created by&nbsp;let.</p>
+<p>binding macro is similar to let but it temporarily gives new thread local values to existing global bindings. The new values are seen in the form and also in functions that arecalled from outside it. Another difference is that let assigns values sequentially in the vector whereas binding sets it parallely. Binding can only change the value of dynamic&nbsp;vars.</p>
+<h3>Questions</h3>
+<p><a href="http://stackoverflow.com/questions/9396784/what-are-the-practical-differences-between-special-forms-and-macros">What is special form vs macro?</a>
+<a href="http://clojuredocs.org/clojure_core/1.2.0/clojure.core/defn">What is defn?</a>
+<a href="http://clojure.org/vars">What is&nbsp;var?</a></p></article>          </section>
       </div>
       </div> <!--! end of #container -->
   <footer>
