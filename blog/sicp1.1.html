@@ -22,8 +22,8 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Clojure Cheat Sheet</title>
-  <meta name="description" content="A personal lookup table for clojure.">
+  <title>SICP 1.1 notes</title>
+  <meta name="description" content="Notes from SICP Chapter 1 section 1">
   <meta name="author" content="Siddharth Sarda">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -41,7 +41,7 @@
         enables HTML5 elements & feature detects -->
     <script src="/media/js/libs/modernizr-1.7.min.js"></script>
     </head>
-<body id="clojure-cheatsheet">
+<body id="sicp1.1">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -73,15 +73,15 @@
           <article class="post">
 <nav class="post_nav">
 <a class="backlink" href="/blog">Back to list</a>
-<a class="prev"
-    title="Plan for SICP"
-        href="/blog/sicp_intro.html">
+<a class="prev disabled"
+    title=""
+    >
     Next
 </a>
 
 <a class="next"
-    title="The first post"
-        href="/blog/first-post.html">
+    title="Plan for SICP"
+        href="/blog/sicp_intro.html">
     Previous
 </a>
 
@@ -103,45 +103,66 @@
 </div>
 </nav>
 <h1 class="title">
-    <a href="/blog/clojure-cheatsheet.html">
-        Clojure Cheat Sheet
+    <a href="/blog/sicp1.1.html">
+        SICP 1.1 notes
     </a>
 </h1>
-<time datetime="2012-03-21">
-    Posted: Wed, 21 Mar 2012
+<time datetime="2012-03-23">
+    Posted: Fri, 23 Mar 2012
 </time>
 
 <ul class="tags clear">
-<li>
-    <a class="small" href="/blog/tags/clojure.html">
-        clojure
-    </a>
-</li>
 <li>
     <a class="small" href="/blog/tags/sicp.html">
         sicp
     </a>
 </li>
 </ul>
-<p>I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
-Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a shot.
-I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
-Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a&nbsp;shot.</p>
-<p><strong>Getting Documentation in clojure</strong>: Export library using require and then do a call on doc with what you want to know as an argument
-                                        Example:
-                                          (require &#8216;clojure.string)
-                                          (doc&nbsp;clojure.string/join)</p>
-<p><strong>Commenting in clojure</strong>: Use&nbsp;;</p>
-<p><strong> Different ways of Assigning values in Clojure </strong>:
-def is global binding. Although possible to override, dont because it goes against the concept of mutable&nbsp;datastructures</p>
-<p>let is a special form creates bindings that are local to that form.(Does form mean a function?). The argument for let is a vector(list?) containing name expression pairs. The expressions are evaluated in order and their results are assigned to the names on their left. These bindings can be used in the expressions that follow them in the vector. Functions that are called in the body cannot see the local bindings created by&nbsp;let.</p>
-<p>binding macro is similar to let but it temporarily gives new thread local values to existing global bindings. The new values are seen in the form and also in functions that arecalled from outside it. Another difference is that let assigns values sequentially in the vector whereas binding sets it parallely. Binding can only change the value of dynamic&nbsp;vars.</p>
-<h3>Questions</h3>
-<p><a href="http://stackoverflow.com/questions/9396784/what-are-the-practical-differences-between-special-forms-and-macros">What is special form vs macro?</a>
-<a href="http://clojuredocs.org/clojure_core/1.2.0/clojure.core/defn">What is defn?</a>
-<a href="http://clojure.org/vars">What is&nbsp;var?</a></p>
-<h2><a href="http://clojure.org/lisps">Difference between Clojure and&nbsp;Lisp</a></h2>
-<h2><a href="http://java.ociweb.com/mark/clojure/article.html">Getting&nbsp;Started</a></h2></article>
+<p>Notes and solutions to exercises from Chapter 1
+I have just gone through the first video from the awesome <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/"><span class="caps">MIT</span> <span class="caps">SICP</span> Course</a> and the first section from the book. Here are some notes, solutions and&nbsp;insights.</p>
+<p>The three mechanisms each powerful programming language has for combining simple ideas to form more complex ideas:
+1. Primitive expressions : Operations like +, * etc.
+2. Means of combination : To combine simple elements and build combine elements. Example: (* 5 3)<br />
+3. Means of Abstraction : to name compound elements and then manipulate them. Example in the simplest case naming a variable. For more advanced cases defining a&nbsp;procedure.</p>
+<p>What is <span class="caps">REPL</span>?
+Repl is a read eval print loop. <em>The interpreter reads an expression, evaluates it and then prints it.</em><br />
+</p>
+<p><strong>Rules for evaluating a combination:</strong><br />
+1. Evaluate the subexpressions of the combination.
+2. Apply the procedure that is the leftmost subexpression(the operator) to the arguments that are the values of the other sub-expressions (The operands).<br />
+</p>
+<p>What are special forms?<br />
+Special forms are exception to the general evaluation rule mentioned above. Each special form has its own evaluation rule. The set of special forms consitute the syntax of the&nbsp;language.</p>
+<p>What are compound procedures?<br />
+In layman language they are functions.But they are also a very powerful abstraction technique by which a compound operation is given a name and then referred to as a&nbsp;unit. </p>
+<p><strong>Rules for procedure application:</strong>
+  The process of evaluating a combination whose operator names a compound procedure the interpreter follows pretty much the same rule as mentioned above for ecaluating a combination. The interpreter evaluates the elements of the combination and applies the procedure(The operand of the combination) to the arguments (which are values of the operands of the&nbsp;combination).</p>
+<p>Substitution model for procedure application:
+  Evaluate the body of the compound procedure by replacing each formal parameter( for example in (defn square [a] (* a a)) a is the formal parameter) with the corresponding argument. Note: this is not actually how interpreter works. Its just a way of thinking about procedure&nbsp;application.</p>
+<p>Now there are two ways of evaluating the arguments.
+  <em>Applicative order</em>(evaluate the arguments and then apply): Here the interpreter first evaluates the operator and the operands and then applies the procedure to the operator.<br />
+  For example: 
+  (defn sum-of-squares [a b] (+ (square a) (square b))) where square is defined as (defn square [a] (<em> a a))
+  (sum-of-squares (+ 5 4) (</em> 2 4) ) is evaluated as:
+  (+ (square (+ 5 4)) (square (<em> 2 4)))
+  (+ (square 9) (square 8) )
+  (+ (</em> 9 9) (<em> 8 8) )
+  (+ 81 64)
+  145
+  </em>Normal order<em>(fully expand and then reduce): Here the interpreter does not evaluate the operands until their value was needed. Instead it will keep subsituting operand expressions for operators until we get an expression involving only primitive operators and only then will it evaluate.<br />
+  Going by the previous example:
+  (sum-of-squares (+ 5 4) (</em> 2 4) )
+  (+ (square (+ 5 4)) (square (<em> 2 4)))
+  (+ (</em> (+ 5 4) (+ 5 4) ) (<em> (</em> 2 4) (<em> 2 4)) ) ; All primitive now, evaluate
+  (+ (</em> 9 9) (* 8 8))
+  (+ 81 64)&nbsp;145</p>
+<p>Thinking of procedures as black boxed abstractions:
+  While it is very evident to anyone who has programmed a bit how this make sense, the lecture and the book along with functional programming make this simple statement almost an&nbsp;epiphany. </p>
+<h2>Solutions to&nbsp;Problems:</h2>
+<p>I have left out some of the easy ones and the ones which involve code can be found at my&nbsp;github.</p>
+<p>1.5 Because the function p that is defined is not a valid function and since the applicative order of evaluation evaluates all its operators the applicative order will throw an error. Since the normal order of evaluation evaluates the arguments only if needed it will return a&nbsp;value.</p>
+<p>1.6 This is an interesting case. When I tried to run the example in Clojure with the new-if, it threw an error saying only the last statement can be a recursive call. On scheme the function waits forever. This happens because if is a special form which follows its own order of evaluation whereas our new-if follows the applicative order of evaluation. Since it can never evaluate the recursive call, the function&nbsp;hangs.</p>
+<p><a href="https://github.com/siddharthsarda/sicp-clojure">Solutions to the&nbsp;exercises</a></p></article>
 
 <br></br>
 <div id="disqus_thread"></div>

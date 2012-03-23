@@ -22,8 +22,8 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>A basic blog</title>
-  <meta name="description" content="">
+  <title>Plan for SICP</title>
+  <meta name="description" content="None">
   <meta name="author" content="Siddharth Sarda">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -41,7 +41,7 @@
         enables HTML5 elements & feature detects -->
     <script src="/media/js/libs/modernizr-1.7.min.js"></script>
     </head>
-<body id="index">
+<body id="sicp_intro">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -70,55 +70,85 @@
 </nav>
                     </header>
           <section class="content">
-          <h1 class="title">A basic blog</h1>
-<ul class="listing clear">
-<li>
-    <article >
-<h3><a href="/blog/sicp1.1.html">SICP 1.1 notes</a></h3>
-<a href="/blog/sicp1.1.html"></a>
-<p>Notes and solutions to exercises from Chapter&nbsp;1</p>
+          <article class="post">
+<nav class="post_nav">
+<a class="backlink" href="/blog">Back to list</a>
+<a class="prev"
+    title="SICP 1.1 notes"
+        href="/blog/sicp1.1.html">
+    Next
+</a>
+
+<a class="next"
+    title="Clojure Cheat Sheet"
+        href="/blog/clojure-cheatsheet.html">
+    Previous
+</a>
+
+<br>
+<div id="twitter_share">
+<a href="http://twitter.com/share"
+    class="twitter-share-button"
+    data-count="vertical"
+    data-via="sid6376">Tweet</a>
+    <script type="text/javascript"
+        src="http://platform.twitter.com/widgets.js"></script>
+</div>
+<div id="facebook_like">
+<iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
+            scrolling="no"
+            frameborder="0"
+            style="border:none; overflow:hidden; width:450px; height:65px;"
+            allowTransparency="true"></iframe>
+</div>
+</nav>
+<h1 class="title">
+    <a href="/blog/sicp_intro.html">
+        Plan for SICP
+    </a>
+</h1>
 <time datetime="2012-03-23">
     Posted: Fri, 23 Mar 2012
 </time>
-</article>
 
-</li>
+<ul class="tags clear">
 <li>
-    <article >
-<h3><a href="/blog/sicp_intro.html">Plan for SICP</a></h3>
-<a href="/blog/sicp_intro.html"></a>
-<p>My plan to work on <span class="caps">SICP</span> and the resources that I will be relying&nbsp;on.</p>
-<time datetime="2012-03-23">
-    Posted: Fri, 23 Mar 2012
-</time>
-</article>
-
-</li>
-<li>
-    <article >
-<h3><a href="/blog/clojure-cheatsheet.html">Clojure Cheat Sheet</a></h3>
-<a href="/blog/clojure-cheatsheet.html"></a>
-<p>I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
-Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a&nbsp;shot.</p>
-<time datetime="2012-03-21">
-    Posted: Wed, 21 Mar 2012
-</time>
-</article>
-
-</li>
-<li>
-    <article >
-<h3><a href="/blog/first-post.html">The first post</a></h3>
-<a href="/blog/first-post.html"></a>
-<p>There have been previous attempts to keep a regular blog. Maybe this time will be&nbsp;different.</p>
-<time datetime="2012-03-20">
-    Posted: Tue, 20 Mar 2012
-</time>
-</article>
-
+    <a class="small" href="/blog/tags/sicp.html">
+        sicp
+    </a>
 </li>
 </ul>
-          </section>
+<p>My plan to work on <span class="caps">SICP</span> and the resources that I will be relying on.
+I have been meaning to work through <span class="caps">SICP</span> for a long time and as I mentioned in my previous post, I am finally working on it.
+The plan right now is to work through it in clojure and if required later switch to scheme. I chose Clojure because the awesome <a href="http://news.ycombinator.com/user?id=yummyfajitas">Chris Stucchio</a> told me it would be a good&nbsp;choice.</p>
+<p>The resources that I plan to use are:<br />
+</p>
+<ul>
+<li>
+<p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/"><span class="caps">MIT</span> Lecture&nbsp;Videos</a></p>
+</li>
+<li>
+<p>The <span class="caps">SICP</span> Book(also available <a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">online</a>.)</p>
+</li>
+</ul>
+<p>I will also keep posting the code I write on my <a href="https://github.com/siddharthsarda/sicp-clojure">github</a> as well as keep posting solutions in the form of blog&nbsp;posts.</p>
+<p>I will keep updating this section as I go&nbsp;along.</p></article>
+
+<br></br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'siddharthsarda'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>          </section>
       </div>
       </div> <!--! end of #container -->
   <footer>

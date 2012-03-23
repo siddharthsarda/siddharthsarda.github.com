@@ -1,0 +1,72 @@
+---
+title: SICP 1.1 notes
+description: Notes from SICP Chapter 1 section 1
+created: !!timestamp '2012-03-23 20:40:00'
+tags:
+    - sicp
+---
+
+{% mark excerpt -%}
+
+Notes and solutions to exercises from Chapter 1
+
+{%- endmark %}
+
+I have just gone through the first video from the awesome [MIT SICP Course](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/) and the first section from the book. Here are some notes, solutions and insights.
+
+The three mechanisms each powerful programming language has for combining simple ideas to form more complex ideas:
+1. Primitive expressions : Operations like +, * etc.
+2. Means of combination : To combine simple elements and build combine elements. Example: (* 5 3)  
+3. Means of Abstraction : to name compound elements and then manipulate them. Example in the simplest case naming a variable. For more advanced cases defining a procedure.
+
+What is REPL?
+Repl is a read eval print loop. *The interpreter reads an expression, evaluates it and then prints it.*  
+
+
+**Rules for evaluating a combination:**  
+1. Evaluate the subexpressions of the combination.
+2. Apply the procedure that is the leftmost subexpression(the operator) to the arguments that are the values of the other sub-expressions (The operands).  
+
+What are special forms?  
+Special forms are exception to the general evaluation rule mentioned above. Each special form has its own evaluation rule. The set of special forms consitute the syntax of the language.
+
+What are compound procedures?  
+In layman language they are functions.But they are also a very powerful abstraction technique by which a compound operation is given a name and then referred to as a unit. 
+
+
+**Rules for procedure application:**
+  The process of evaluating a combination whose operator names a compound procedure the interpreter follows pretty much the same rule as mentioned above for ecaluating a combination. The interpreter evaluates the elements of the combination and applies the procedure(The operand of the combination) to the arguments (which are values of the operands of the combination).
+  
+  Substitution model for procedure application:
+  Evaluate the body of the compound procedure by replacing each formal parameter( for example in (defn square [a] (* a a)) a is the formal parameter) with the corresponding argument. Note: this is not actually how interpreter works. Its just a way of thinking about procedure application.
+  
+  Now there are two ways of evaluating the arguments.
+  *Applicative order*(evaluate the arguments and then apply): Here the interpreter first evaluates the operator and the operands and then applies the procedure to the operator.  
+  For example: 
+  (defn sum-of-squares [a b] (+ (square a) (square b))) where square is defined as (defn square [a] (* a a))
+  (sum-of-squares (+ 5 4) (* 2 4) ) is evaluated as:
+  (+ (square (+ 5 4)) (square (* 2 4)))
+  (+ (square 9) (square 8) )
+  (+ (* 9 9) (* 8 8) )
+  (+ 81 64)
+  145
+  *Normal order*(fully expand and then reduce): Here the interpreter does not evaluate the operands until their value was needed. Instead it will keep subsituting operand expressions for operators until we get an expression involving only primitive operators and only then will it evaluate.  
+  Going by the previous example:
+  (sum-of-squares (+ 5 4) (* 2 4) )
+  (+ (square (+ 5 4)) (square (* 2 4)))
+  (+ (* (+ 5 4) (+ 5 4) ) (* (* 2 4) (* 2 4)) ) ; All primitive now, evaluate
+  (+ (* 9 9) (* 8 8))
+  (+ 81 64)
+  145
+  
+  Thinking of procedures as black boxed abstractions:
+  While it is very evident to anyone who has programmed a bit how this make sense, the lecture and the book along with functional programming make this simple statement almost an epiphany. 
+
+## Solutions to Problems:  
+I have left out some of the easy ones and the ones which involve code can be found at my github.
+
+1.5 Because the function p that is defined is not a valid function and since the applicative order of evaluation evaluates all its operators the applicative order will throw an error. Since the normal order of evaluation evaluates the arguments only if needed it will return a value.
+
+1.6 This is an interesting case. When I tried to run the example in Clojure with the new-if, it threw an error saying only the last statement can be a recursive call. On scheme the function waits forever. This happens because if is a special form which follows its own order of evaluation whereas our new-if follows the applicative order of evaluation. Since it can never evaluate the recursive call, the function hangs.
+
+[Solutions to the exercises](https://github.com/siddharthsarda/sicp-clojure)

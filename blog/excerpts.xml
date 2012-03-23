@@ -7,17 +7,32 @@
         <link href="/"/>
     
         
-    <updated>2012-03-23T16:41:14Z</updated>
+    <updated>2012-03-23T20:41:03Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
             <entry>
+            <title type="html">SICP 1.1 notes</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/sicp1.1.html"/>
+            <updated>2012-03-23T20:40:00Z</updated>
+            <published>2012-03-23T20:40:00Z</published>
+            <id>/blog/sicp1.1.html</id>
+                        <category   scheme="/blog/tags"
+                        term="sicp"
+                        label="Sicp" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Notes and solutions to exercises from Chapter&amp;nbsp;1&lt;/p&gt;            </content>
+        </entry>
+            <entry>
             <title type="html">Plan for SICP</title>
             <author><name>Siddharth Sarda</name></author>
-            <link href="/blog/sicp_into.html"/>
+            <link href="/blog/sicp_intro.html"/>
             <updated>2012-03-23T16:15:00Z</updated>
             <published>2012-03-23T16:15:00Z</published>
-            <id>/blog/sicp_into.html</id>
+            <id>/blog/sicp_intro.html</id>
                         <category   scheme="/blog/tags"
                         term="sicp"
                         label="Sicp" />
