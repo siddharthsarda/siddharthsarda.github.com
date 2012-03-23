@@ -22,8 +22,8 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Clojure Cheat Sheet</title>
-  <meta name="description" content="A personal lookup table for clojure.">
+  <title>Plan for SICP</title>
+  <meta name="description" content="None">
   <meta name="author" content="Siddharth Sarda">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -41,7 +41,7 @@
         enables HTML5 elements & feature detects -->
     <script src="/media/js/libs/modernizr-1.7.min.js"></script>
     </head>
-<body id="clojure-cheatsheet">
+<body id="sicp_into">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -73,15 +73,15 @@
           <article class="post">
 <nav class="post_nav">
 <a class="backlink" href="/blog">Back to list</a>
-<a class="prev"
-    title="Plan for SICP"
-        href="/blog/sicp_into.html">
+<a class="prev disabled"
+    title=""
+    >
     Next
 </a>
 
 <a class="next"
-    title="The first post"
-        href="/blog/first-post.html">
+    title="Clojure Cheat Sheet"
+        href="/blog/clojure-cheatsheet.html">
     Previous
 </a>
 
@@ -103,45 +103,36 @@
 </div>
 </nav>
 <h1 class="title">
-    <a href="/blog/clojure-cheatsheet.html">
-        Clojure Cheat Sheet
+    <a href="/blog/sicp_into.html">
+        Plan for SICP
     </a>
 </h1>
-<time datetime="2012-03-21">
-    Posted: Wed, 21 Mar 2012
+<time datetime="2012-03-23">
+    Posted: Fri, 23 Mar 2012
 </time>
 
 <ul class="tags clear">
-<li>
-    <a class="small" href="/blog/tags/clojure.html">
-        clojure
-    </a>
-</li>
 <li>
     <a class="small" href="/blog/tags/sicp.html">
         sicp
     </a>
 </li>
 </ul>
-<p>I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
-Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a shot.
-I have been putting off learning a functional language and reading <span class="caps">SICP</span> for a long time. I finally got off my ass and installed clojure and worked through some basic concepts.
-Since there is a whole lot of terminology I might not understand I am planning to keep a cheatsheet via this blog post, which I can refer to whenever I have a doubt.I understand that its a little difficult working through <span class="caps">SICP</span> with clojure as there are some differences I still want to give it a&nbsp;shot.</p>
-<p><strong>Getting Documentation in clojure</strong>: Export library using require and then do a call on doc with what you want to know as an argument
-                                        Example:
-                                          (require &#8216;clojure.string)
-                                          (doc&nbsp;clojure.string/join)</p>
-<p><strong>Commenting in clojure</strong>: Use&nbsp;;</p>
-<p><strong> Different ways of Assigning values in Clojure </strong>:
-def is global binding. Although possible to override, dont because it goes against the concept of mutable&nbsp;datastructures</p>
-<p>let is a special form creates bindings that are local to that form.(Does form mean a function?). The argument for let is a vector(list?) containing name expression pairs. The expressions are evaluated in order and their results are assigned to the names on their left. These bindings can be used in the expressions that follow them in the vector. Functions that are called in the body cannot see the local bindings created by&nbsp;let.</p>
-<p>binding macro is similar to let but it temporarily gives new thread local values to existing global bindings. The new values are seen in the form and also in functions that arecalled from outside it. Another difference is that let assigns values sequentially in the vector whereas binding sets it parallely. Binding can only change the value of dynamic&nbsp;vars.</p>
-<h3>Questions</h3>
-<p><a href="http://stackoverflow.com/questions/9396784/what-are-the-practical-differences-between-special-forms-and-macros">What is special form vs macro?</a>
-<a href="http://clojuredocs.org/clojure_core/1.2.0/clojure.core/defn">What is defn?</a>
-<a href="http://clojure.org/vars">What is&nbsp;var?</a></p>
-<h2><a href="http://clojure.org/lisps">Difference between Clojure and&nbsp;Lisp</a></h2>
-<h2><a href="http://java.ociweb.com/mark/clojure/article.html">Getting&nbsp;Started</a></h2></article>
+<p>My plan to work on <span class="caps">SICP</span> and the resources that I will be relying on.
+I have been meaning to work through <span class="caps">SICP</span> for a long time and as I mentioned in my previous post, I am finally working on it.
+The plan right now is to work through it in clojure and if required later switch to scheme. I chose Clojure because the awesome <a href="http://news.ycombinator.com/user?id=yummyfajitas">Chris Stucchio</a> told me it would be a good&nbsp;choice.</p>
+<p>The resources that I plan to use are:<br />
+</p>
+<ul>
+<li>
+<p><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/"><span class="caps">MIT</span> Lecture&nbsp;Videos</a></p>
+</li>
+<li>
+<p>The <span class="caps">SICP</span> Book(also available <a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">online</a>.)</p>
+</li>
+</ul>
+<p>I will also keep posting the code I write on my github as well as keep posting solutions in the form of blog&nbsp;posts.</p>
+<p>I will keep updating this section as I go&nbsp;along.</p></article>
 
 <br></br>
 <div id="disqus_thread"></div>

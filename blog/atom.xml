@@ -7,10 +7,24 @@
         <link href="/"/>
     
         
-    <updated>2012-03-21T09:27:12Z</updated>
+    <updated>2012-03-23T16:39:59Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Plan for SICP</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/sicp_into.html"/>
+            <updated>2012-03-23T16:15:00Z</updated>
+            <published>2012-03-23T16:15:00Z</published>
+            <id>/blog/sicp_into.html</id>
+                        <category   scheme="/blog/tags"
+                        term="sicp"
+                        label="Sicp" />
+            
+            <content type="html">
+                                            </content>
+        </entry>
             <entry>
             <title type="html">Clojure Cheat Sheet</title>
             <author><name>Siddharth Sarda</name></author>
