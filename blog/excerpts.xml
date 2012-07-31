@@ -7,10 +7,40 @@
         <link href="/"/>
     
         
-    <updated>2012-03-23T20:41:03Z</updated>
+    <updated>2012-08-01T00:55:50Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">INSTALLED_APPS in django</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/django-installed-apps.html"/>
+            <updated>2012-07-31T21:25:00Z</updated>
+            <published>2012-07-31T21:25:00Z</published>
+            <id>/blog/django-installed-apps.html</id>
+                        <category   scheme="/blog/tags"
+                        term="django"
+                        label="Django" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Whats the importance of the INSTALLED_APPS setting in&amp;nbsp;Django?&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">SICP 1.2 notes</title>
+            <author><name>Siddharth Sarda</name></author>
+            <link href="/blog/sicp1.2.html"/>
+            <updated>2012-03-23T20:40:00Z</updated>
+            <published>2012-03-23T20:40:00Z</published>
+            <id>/blog/sicp1.2.html</id>
+                        <category   scheme="/blog/tags"
+                        term="sicp"
+                        label="Sicp" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Notes and solutions to exercises from Chapter&amp;nbsp;2&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">SICP 1.1 notes</title>
             <author><name>Siddharth Sarda</name></author>

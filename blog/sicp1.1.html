@@ -73,9 +73,9 @@
           <article class="post">
 <nav class="post_nav">
 <a class="backlink" href="/blog">Back to list</a>
-<a class="prev disabled"
-    title=""
-    >
+<a class="prev"
+    title="SICP 1.2 notes"
+        href="/blog/sicp1.2.html">
     Next
 </a>
 
@@ -124,40 +124,48 @@ I have just gone through the first video from the awesome <a href="http://ocw.mi
 1. Primitive expressions : Operations like +, * etc.
 2. Means of combination : To combine simple elements and build combine elements. Example: (* 5 3)<br />
 3. Means of Abstraction : to name compound elements and then manipulate them. Example in the simplest case naming a variable. For more advanced cases defining a&nbsp;procedure.</p>
-<p>What is <span class="caps">REPL</span>?
+<p>What is <span class="caps">REPL</span>?<br />
 Repl is a read eval print loop. <em>The interpreter reads an expression, evaluates it and then prints it.</em><br />
 </p>
 <p><strong>Rules for evaluating a combination:</strong><br />
-1. Evaluate the subexpressions of the combination.
+1. Evaluate the subexpressions of the combination.<br />
 2. Apply the procedure that is the leftmost subexpression(the operator) to the arguments that are the values of the other sub-expressions (The operands).<br />
 </p>
 <p>What are special forms?<br />
-Special forms are exception to the general evaluation rule mentioned above. Each special form has its own evaluation rule. The set of special forms consitute the syntax of the&nbsp;language.</p>
+Special forms are exception to the general evaluation rule mentioned above. Each special form has its own evaluation rule. The set of special forms consitute the syntax of the language.<br />
+</p>
 <p>What are compound procedures?<br />
 In layman language they are functions.But they are also a very powerful abstraction technique by which a compound operation is given a name and then referred to as a&nbsp;unit. </p>
 <p><strong>Rules for procedure application:</strong>
   The process of evaluating a combination whose operator names a compound procedure the interpreter follows pretty much the same rule as mentioned above for ecaluating a combination. The interpreter evaluates the elements of the combination and applies the procedure(The operand of the combination) to the arguments (which are values of the operands of the&nbsp;combination).</p>
-<p>Substitution model for procedure application:
+<p><strong>Substitution model for procedure application:</strong>
   Evaluate the body of the compound procedure by replacing each formal parameter( for example in (defn square [a] (* a a)) a is the formal parameter) with the corresponding argument. Note: this is not actually how interpreter works. Its just a way of thinking about procedure&nbsp;application.</p>
-<p>Now there are two ways of evaluating the arguments.
-  <em>Applicative order</em>(evaluate the arguments and then apply): Here the interpreter first evaluates the operator and the operands and then applies the procedure to the operator.<br />
+<p>Now there are two ways of evaluating the arguments<br />
+</p>
+<p>Applicative order(evaluate the arguments and then apply): Here the interpreter first evaluates the operator and the operands and then applies the procedure to the operator.<br />
   For example: 
-  (defn sum-of-squares [a b] (+ (square a) (square b))) where square is defined as (defn square [a] (<em> a a))
-  (sum-of-squares (+ 5 4) (</em> 2 4) ) is evaluated as:
-  (+ (square (+ 5 4)) (square (<em> 2 4)))
-  (+ (square 9) (square 8) )
-  (+ (</em> 9 9) (<em> 8 8) )
-  (+ 81 64)
-  145
-  </em>Normal order<em>(fully expand and then reduce): Here the interpreter does not evaluate the operands until their value was needed. Instead it will keep subsituting operand expressions for operators until we get an expression involving only primitive operators and only then will it evaluate.<br />
-  Going by the previous example:
-  (sum-of-squares (+ 5 4) (</em> 2 4) )
-  (+ (square (+ 5 4)) (square (<em> 2 4)))
-  (+ (</em> (+ 5 4) (+ 5 4) ) (<em> (</em> 2 4) (<em> 2 4)) ) ; All primitive now, evaluate
-  (+ (</em> 9 9) (* 8 8))
-  (+ 81 64)&nbsp;145</p>
-<p>Thinking of procedures as black boxed abstractions:
+  (defn sum-of-squares [a b] (+ (square a) (square b))) where square is defined as (defn square [a] (<em> a a))<br />
+  (sum-of-squares (+ 5 4) (</em> 2 4) ) is evaluated as:<br />
+  (+ (square (+ 5 4)) (square (<em> 2 4)))<br />
+  (+ (square 9) (square 8) )<br />
+  (+ (</em> 9 9) (* 8 8) )<br />
+  (+ 81 64)<br />
+  145<br />
+</p>
+<p>Normal order(fully expand and then reduce): Here the interpreter does not evaluate the operands until their value was needed. Instead it will keep subsituting operand expressions for operators until we get an expression involving only primitive operators and only then will it evaluate.<br />
+  Going by the previous example:<br />
+  (sum-of-squares (+ 5 4) (<em> 2 4) )<br />
+  (+ (square (+ 5 4)) (square (</em> 2 4)))<br />
+  (+ (<em> (+ 5 4) (+ 5 4) ) (</em> (<em> 2 4) (</em> 2 4)) ) ; All primitive now, evaluate<br />
+  (+ (<em> 9 9) (</em> 8 8))<br />
+  (+ 81 64)<br />
+  145<br />
+</p>
+<p><strong>Thinking of procedures as black boxed abstractions:</strong>
   While it is very evident to anyone who has programmed a bit how this make sense, the lecture and the book along with functional programming make this simple statement almost an&nbsp;epiphany. </p>
+<p><strong>Difference between procedures and functions</strong>
+The contrast between function and procedure is a reflection of the general distinction between describing properties of things and describing how to do things, or, as it is sometimes referred to, the distinction between declarative knowledge and imperative knowledge. In mathematics we are usually concerned with declarative
+(what is) descriptions, whereas in computer science we are usually concerned with imperative (how to)&nbsp;descriptions.</p>
 <h2>Solutions to&nbsp;Problems:</h2>
 <p>I have left out some of the easy ones and the ones which involve code can be found at my&nbsp;github.</p>
 <p>1.5 Because the function p that is defined is not a valid function and since the applicative order of evaluation evaluates all its operators the applicative order will throw an error. Since the normal order of evaluation evaluates the arguments only if needed it will return a&nbsp;value.</p>
