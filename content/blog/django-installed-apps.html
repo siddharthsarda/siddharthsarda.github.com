@@ -14,19 +14,26 @@ Whats the importance of the INSTALLED_APPS setting in Django?
 
 While trying to build my first django module [django-abtest](https://github.com/siddharthsarda/django-abtest/) I was a little stumped by the importance of **INSTALLED_APPS** setting in django. I decided to dig in to the django source to see where is the setting used.
 
-###templates
-* In template/loaders/eggs.py It is used to load templates from the installed apps.
-* In template/loaders/app_directories.py It is used to load templates from the directory under the "templates" folder of each of the installed apps.
-* In template/base.py  If you want to have custom template tags in django, they should sit under the *templatetags* folder of your app. In template/base.py django loads all the custom tags defined in each of the INSTALLED_APPS.
+**templates**
 
-###core
-* In core/management/__init__.py If an app has some [custom commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) defined then they are included if and only if the app is listed in INSTALLED_APPS. Additionally, django also goes ahead and adds autocomplete for them.
-* In core/management/commands/syncdb.py When python manage.py syncdb is run, tables are created for all apps defined in INSTALLED_APPS.
-* In core/management/flush.py While flushing the database we import the management module in each of the INSTALLED_APPS to register dispatcher events
+In template/loaders/eggs.py It is used to load templates from the installed apps.
+In template/loaders/app_directories.py It is used to load templates from the directory under the "templates" folder of each of the installed apps.
+In template/base.py  If you want to have custom template tags in django, they should sit under the *templatetags* folder of your app. In template/base.py django loads all the custom tags defined in each of the INSTALLED_APPS.
 
-###db
-* In db/models/loading.py Used by AppCache to cache all the installed apps and their models
-* In db/models/options.py I couldnt quite figure out how and why INSTALLED_APPS is used here. Please let me know, if you know why.
+**core**
+
+In core/management/__init__.py If an app has some [custom commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) defined then they are included if and only if the app is listed in INSTALLED_APPS. Additionally, django also goes ahead and adds autocomplete for them.
+
+In core/management/commands/syncdb.py When python manage.py syncdb is run, tables are created for all apps defined in INSTALLED_APPS.
+
+In core/management/flush.py While flushing the database we import the management module in each of the INSTALLED_APPS to register dispatcher events
+
+
+**db**
+
+In db/models/loading.py Used by AppCache to cache all the installed apps and their models.
+
+In db/models/options.py I couldnt quite figure out how and why INSTALLED_APPS is used here. Please let me know, if you know why.
 
 Apart from this this settings is also used in a lot of contrib modules like - auth, gis etc. However since I just wanted to get a basic understanding of what this setting achieves, I will stop here.
 

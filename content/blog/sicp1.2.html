@@ -1,0 +1,50 @@
+---
+title: SICP 1.2 notes
+description: Notes from SICP Chapter 1 section 2
+created: !!timestamp '2012-03-23 20:40:00'
+tags:
+    - sicp
+---
+
+{% mark excerpt -%}
+
+Notes and solutions to exercises from Chapter 2
+
+{%- endmark %}
+
+A good quote about processes and procedures:
+> A procedure is a pattern for the *local evolution* of a computational process. It specifies how each stage of the process is built upon the previous stage. We would like to 
+> be able to make statements about the overall or ,*global*, behavior of a process whose local evolution has been specified by a procedure.
+
+** Iterative and Recursive Processes **  
+   Recursive Process:  
+   This type of process is characterized by a chain of deferred operations. Carrying out this process requires the interpreter to keep track of whats going on.  
+   
+   Iterative Process:  
+   An iterative process is one whose state can be summarized by a fixed number of state variables which contain all the information needed. The space requirement is constant. 
+
+
+Difference between recursive procedures and recursive process?  
+When a procedure is recursive, it relates more to the *synstactic* fact that the procedure definition refers to the procedure itself. But when a process is called recursive, its more a comment on the evolution of the process.
+
+** Tail-recursion** 
+
+In C and some other languages are implemented in such a way that any recursive procedure consumes an amount of memory that grows with the number of procedure calls, even when the process described is iterative.  
+With *tail recursion* an iterative process will be executed in constant space, even if the process is defined by a recursive procedure.
+
+
+Exercise 1.10  
+f =2n  
+g =2^n  
+h(n) = 2^h(n-1)  
+
+This exercise taught me about a new hyper-operator called [Tetration](http://en.wikipedia.org/wiki/Tetration)  
+
+** Tree Recursion **  
+The naive recursive algorithm by Fibonacci generates a tree recursive process. Its a horrible way to calculate fibonacci numbers as they consume O(n) space and O(fib(n)) time.
+In general a tree recusrive procedure will have time complexity proportional to the number of nodes in the tree and space complexity of the depth of the tree. The space complexity is linear because at any point in time we will only need to keep track of our path back to the root node.
+
+
+
+
+[Solutions to the exercises](https://github.com/siddharthsarda/sicp-clojure)
